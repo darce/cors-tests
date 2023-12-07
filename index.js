@@ -7,7 +7,7 @@ const app = express()
 
 const PORT = process.env.PORT || 3333
 app.use(cors())
-app.use(express.static(path.join(__dirname, 'client')))
+app.use(express.static(path.join(__dirname, 'docs')))
 
 app.get('/', (request, response) => {
     response.send('<h1>Server</h1>')
