@@ -9,6 +9,12 @@ const PORT = process.env.PORT || 3333
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'docs')))
 
+/** Disable "interest-cohort" feature */
+app.use((req, res, next) => {
+    res.setHeader('Permissions-Policy', 'interest-cohort=()');
+    next();
+});
+
 app.get('/', (request, response) => {
     response.send('<h1>Server</h1>')
 })
