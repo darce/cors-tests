@@ -5,7 +5,7 @@ const App = () => {
     }
 
     const getData = async () => {
-        const host = 'cors-tests.fly.dev/'
+        const host = 'https://cors-tests.fly.dev/'
         const url = 'api/traffic'
         const response = await fetch(host + url)
         const data = await (response.json())
